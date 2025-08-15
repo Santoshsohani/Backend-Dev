@@ -48,3 +48,20 @@ Domain Naame is nothing but nickname given to IP Address, Computer communicate w
 3. TLD Top level domain: .com or .in
 
 When browswer requests for IP Address - It first search the cache or queries the DNS Hierrarchy & after generating domain name browswer now talks with the IP Address.
+
+## Hosting
+Hosting is the process of storing your files, code and data of your web-application in an server which is connected to the internet such that It can be accessed by the external world.
+- Domain : Address
+- Hosting : The actual entity which has the service
+
+Hosting is Nothing but a computer with
+- A public IP Address
+- A software to serve content
+- Storage capabilities for files and application data
+- High bandwidth network connection.
+
+**Types of Hosting**
+- Shared Hosting: Many Applications hosted on the same server, cost effective
+- Dedicated Hosting : Single application is hosted on one single sever
+- VPS (Virtual Private Servers) Hosting : Single server is divided into multiple small virtual servers
+- Cloud Servers : Application runs on multiple virtual servers on Data center

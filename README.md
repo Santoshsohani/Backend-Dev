@@ -69,18 +69,37 @@ Hosting is Nothing but a computer with
 ## DNS and Its working
 
 ```mermaid
-graph TD
+flowchart
     A[User enters www.example.com in browser] --> B[Browser cache check]
     B -->|Found| G[Return IP to browser]
     B -->|Not Found| C[OS cache check]
     C -->|Found| G
-    C -->|Not Found| D[DNS Resolver (ISP or Public)]
+    C -->|Not Found| D[DNS Resolver - ISP or Public]
     D -->|Cache Hit| G
     D -->|Cache Miss| E[Root DNS Server]
-    E --> F[TLD Server (.com)]
-    F --> H[Authoritative DNS Server]
+    E --> F["TLD DNS (.com)"]
+    F --> H[Authoritative DNS Server for example.com]
     H --> G
     G --> I[Browser makes HTTP/HTTPS request to IP]
-
 ```
 
+## Browser and its working
+```mermaid
+flowchart TD
+    A[User enters URL in browser] --> B[Parse URL: protocol, host, path]
+    B --> C[DNS Resolution: Browser Cache → OS Cache → DNS Server]
+    C --> D[TCP Handshake]
+    D --> E[TLS/SSL Handshake]
+    E --> F[Send HTTP Request]
+    F --> G[Receive HTTP Response]
+    G --> H[Parse HTML → Build DOM Tree]
+    H --> I[Find linked resources: CSS, JS, Images]
+    I --> J[Download & Parse CSS → Build CSSOM]
+    I --> K[Download & Execute JavaScript]
+    J --> L[Combine DOM + CSSOM → Render Tree]
+    L --> M[Layout: Calculate size & position]
+    M --> N[Paint: Convert elements to pixels]
+    N --> O[Compositing: GPU assembles final image]
+    K --> H
+
+```

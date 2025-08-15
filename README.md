@@ -37,3 +37,14 @@ It stands for Hyper Text Transfer Protocol which is set of rules how request and
 2. 3xx - Redirection
 3. 4xx - Client Error
 4. 5xx - Server Error
+
+## Domain Name
+
+Domain Naame is nothing but nickname given to IP Address, Computer communicate with eachother with the help of IP Address. It is difficult for human to remember the numerical IP Address - Hence domain name is given.
+
+**Structure of Domain Name** : Domain names are read usually from left to right
+1. Secondary domain: mail
+2. primary domain: google
+3. TLD Top level domain: .com or .in
+
+When browswer requests for IP Address - It first search the cache or queries the DNS Hierrarchy & after generating domain name browswer now talks with the IP Address.

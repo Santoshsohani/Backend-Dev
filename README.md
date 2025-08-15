@@ -65,3 +65,22 @@ Hosting is Nothing but a computer with
 - Dedicated Hosting : Single application is hosted on one single sever
 - VPS (Virtual Private Servers) Hosting : Single server is divided into multiple small virtual servers
 - Cloud Servers : Application runs on multiple virtual servers on Data center
+
+## DNS and Its working
+
+```mermaid
+graph TD
+    A[User enters www.example.com in browser] --> B[Browser cache check]
+    B -->|Found| G[Return IP to browser]
+    B -->|Not Found| C[OS cache check]
+    C -->|Found| G
+    C -->|Not Found| D[DNS Resolver (ISP or Public)]
+    D -->|Cache Hit| G
+    D -->|Cache Miss| E[Root DNS Server]
+    E --> F[TLD Server (.com)]
+    F --> H[Authoritative DNS Server]
+    H --> G
+    G --> I[Browser makes HTTP/HTTPS request to IP]
+
+```
+
